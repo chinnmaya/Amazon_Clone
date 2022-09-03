@@ -1,15 +1,21 @@
 import 'package:amazon_clone/constants/global_variables.dart';
-import 'package:amazon_clone/features/widgets/account_btn.dart';
+import 'package:amazon_clone/features/screens/account_sc_service.dart';
+
 import 'package:amazon_clone/features/widgets/below_appbar.dart';
 import 'package:amazon_clone/features/widgets/order.dart';
-import 'package:amazon_clone/features/widgets/top_button.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
-class account_sc extends StatelessWidget {
+import 'package:amazon_clone/features/widgets/top_button.dart';
+import 'package:amazon_clone/models/Orders.dart';
+import 'package:flutter/material.dart';
+
+class account_sc extends StatefulWidget {
   const account_sc({Key? key}) : super(key: key);
 
+  @override
+  State<account_sc> createState() => _account_scState();
+}
+
+class _account_scState extends State<account_sc> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,7 +62,7 @@ class account_sc extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          orders()
+          orders(),
         ],
       ),
     );

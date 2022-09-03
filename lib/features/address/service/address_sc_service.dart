@@ -54,6 +54,7 @@ class Address_service {
     required String address,
     required double totalsum,
     required String productName,
+    required String image,
   }) async {
     final userProvider = Provider.of<UserProvider>(context, listen: false);
     List<product> productlist = [];
@@ -65,6 +66,7 @@ class Address_service {
             'x-auth-token': userProvider.user.token,
           },
           body: jsonEncode({
+            'image': image,
             'name': productName,
             'totalPrice': totalsum,
             'address': address,

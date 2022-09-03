@@ -2,6 +2,11 @@ const mongoose = require("mongoose");
 const { productSchema } = require("./product");
 
 const orderSchema = mongoose.Schema({
+  image:{
+    type:String,
+    required:true,
+
+  },
   name: {
     type: String,
     required: true,

@@ -57,24 +57,27 @@ class _payment_scState extends State<payment_sc> {
   void codModeorder() {
     showSnackBar(context, "Transcation Completed");
     address_service.placeorder(
+        image: widget.products.images[0],
         context: context,
         address: widget.address,
         totalsum: widget.products.price,
         productName: widget.products.name);
+    //Navigator.pop(context);
     AwesomeDialog(
       context: context,
       animType: AnimType.SCALE,
       dialogType: DialogType.SUCCES,
       body: Center(
         child: Text(
-          'Your order has placed sucessfully and it will deliver to you soon',
+          'Your order has placed sucessfully and it will deliver to you soon.KEEP SHOOPING😍.SEE YOU SOON WITH A ORDER😎',
           style: TextStyle(fontStyle: FontStyle.italic),
         ),
       ),
       title: 'Sucess',
       desc: 'order Placed',
       btnOkOnPress: () {
-        Navigator.pushNamed(context, HomeScreen.routName);
+        Navigator.pop(context);
+        Navigator.pop(context);
       },
     )..show();
   }
@@ -126,11 +129,12 @@ class _payment_scState extends State<payment_sc> {
     print('Success Response: $response');
 
     address_service.placeorder(
+        image: widget.products.images[0],
         context: context,
         address: widget.address,
         totalsum: widget.products.price,
         productName: widget.products.name);
-    AwesomeDialog(
+    /*AwesomeDialog(
       context: context,
       animType: AnimType.SCALE,
       dialogType: DialogType.SUCCES,
@@ -146,7 +150,7 @@ class _payment_scState extends State<payment_sc> {
         Navigator.pushNamed(context, HomeScreen.routName);
       },
     )..show();
-    showSnackBar(context, "Transcation Completed");
+    showSnackBar(context, "Transcation Completed");*/
 
     /*Fluttertoast.showToast(
         msg: "SUCCESS: " + response.paymentId!,

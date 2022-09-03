@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
+import 'package:awesome_dialog/awesome_dialog.dart';
 
 import '../../../common/widgets/custom_button.dart';
 import '../../../common/widgets/custom_textfield.dart';
@@ -54,13 +55,28 @@ class _payment_scState extends State<payment_sc> {
   }
 
   void codModeorder() {
-    Navigator.pushNamed(context, HomeScreen.routName);
     showSnackBar(context, "Transcation Completed");
     address_service.placeorder(
         context: context,
         address: widget.address,
         totalsum: widget.products.price,
         productName: widget.products.name);
+    AwesomeDialog(
+      context: context,
+      animType: AnimType.SCALE,
+      dialogType: DialogType.SUCCES,
+      body: Center(
+        child: Text(
+          'Your order has placed sucessfully and it will deliver to you soon',
+          style: TextStyle(fontStyle: FontStyle.italic),
+        ),
+      ),
+      title: 'Sucess',
+      desc: 'order Placed',
+      btnOkOnPress: () {
+        Navigator.pushNamed(context, HomeScreen.routName);
+      },
+    )..show();
   }
 
   late Razorpay _razorpay;
@@ -108,13 +124,29 @@ class _payment_scState extends State<payment_sc> {
 
   void _handlePaymentSuccess(PaymentSuccessResponse response) {
     print('Success Response: $response');
-    Navigator.pushNamed(context, HomeScreen.routName);
-    showSnackBar(context, "Transcation Completed");
+
     address_service.placeorder(
         context: context,
         address: widget.address,
         totalsum: widget.products.price,
         productName: widget.products.name);
+    AwesomeDialog(
+      context: context,
+      animType: AnimType.SCALE,
+      dialogType: DialogType.SUCCES,
+      body: Center(
+        child: Text(
+          'Your order has placed sucessfully and it will deliver to you soon',
+          style: TextStyle(fontStyle: FontStyle.italic),
+        ),
+      ),
+      title: 'Sucess',
+      desc: 'order Placed',
+      btnOkOnPress: () {
+        Navigator.pushNamed(context, HomeScreen.routName);
+      },
+    )..show();
+    showSnackBar(context, "Transcation Completed");
 
     /*Fluttertoast.showToast(
         msg: "SUCCESS: " + response.paymentId!,

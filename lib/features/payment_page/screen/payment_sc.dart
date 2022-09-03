@@ -61,7 +61,9 @@ class _payment_scState extends State<payment_sc> {
         context: context,
         address: widget.address,
         totalsum: widget.products.price,
-        productName: widget.products.name);
+        productName: widget.products.name,
+        paymentmethod: 'Cash on delivery');
+
     //Navigator.pop(context);
     AwesomeDialog(
       context: context,
@@ -133,7 +135,25 @@ class _payment_scState extends State<payment_sc> {
         context: context,
         address: widget.address,
         totalsum: widget.products.price,
-        productName: widget.products.name);
+        productName: widget.products.name,
+        paymentmethod: 'Online Payment(Paid)');
+    AwesomeDialog(
+      context: context,
+      animType: AnimType.SCALE,
+      dialogType: DialogType.SUCCES,
+      body: Center(
+        child: Text(
+          'Your order has placed sucessfully and it will deliver to you soon.KEEP SHOOPING😍.SEE YOU SOON WITH A ORDER😎',
+          style: TextStyle(fontStyle: FontStyle.italic),
+        ),
+      ),
+      title: 'Sucess',
+      desc: 'order Placed',
+      btnOkOnPress: () {
+        Navigator.pop(context);
+        Navigator.pop(context);
+      },
+    )..show();
     /*AwesomeDialog(
       context: context,
       animType: AnimType.SCALE,

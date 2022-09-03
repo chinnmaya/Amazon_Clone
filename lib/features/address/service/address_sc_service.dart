@@ -55,6 +55,7 @@ class Address_service {
     required double totalsum,
     required String productName,
     required String image,
+    required String paymentmethod,
   }) async {
     final userProvider = Provider.of<UserProvider>(context, listen: false);
     List<product> productlist = [];
@@ -70,7 +71,7 @@ class Address_service {
             'name': productName,
             'totalPrice': totalsum,
             'address': address,
-            //'userId': userProvider.user.token,
+            'paymentmethod': paymentmethod,
           }));
       print(productName);
       print(address);

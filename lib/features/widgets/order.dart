@@ -1,7 +1,9 @@
 import 'package:amazon_clone/common/widgets/loader.dart';
 import 'package:amazon_clone/constants/global_variables.dart';
+import 'package:amazon_clone/features/order_details/order_detail_screen/orderdetail_sc.dart';
 import 'package:amazon_clone/features/widgets/single_product.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
@@ -65,7 +67,17 @@ class _ordersState extends State<orders> {
                       scrollDirection: Axis.horizontal,
                       itemCount: orderss!.length,
                       itemBuilder: (context, index) {
-                        return single_product(image: orderss![index].image);
+                        return GestureDetector(
+                            onTap: () {
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                    builder: (context) => orderDetail_screen(
+                                          order: orderss![index],
+                                        )),
+                              );
+                            },
+                            child:
+                                single_product(image: orderss![index].image));
                       })),
             ],
           );

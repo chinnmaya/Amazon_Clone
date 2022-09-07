@@ -1,9 +1,7 @@
 import 'package:amazon_clone/features/screens/account_sc_service.dart';
-import 'package:amazon_clone/features/screens/account_screen.dart';
+
 import 'package:amazon_clone/features/widgets/account_btn.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class top_btn extends StatefulWidget {
   const top_btn({Key? key}) : super(key: key);

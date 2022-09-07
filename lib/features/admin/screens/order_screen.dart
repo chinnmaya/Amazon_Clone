@@ -1,13 +1,11 @@
 import 'package:amazon_clone/common/widgets/loader.dart';
-import 'package:amazon_clone/features/admin/screens/adimin_screen.dart';
+
 import 'package:amazon_clone/features/order_details/order_detail_screen/orderdetail_sc.dart';
 import 'package:amazon_clone/features/screens/services/admin_services.dart';
 import 'package:amazon_clone/features/widgets/single_product.dart';
 import 'package:amazon_clone/models/Orders.dart';
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 import '../../screens/services/admin_services.dart';
 

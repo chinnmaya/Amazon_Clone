@@ -1,15 +1,11 @@
 import 'package:amazon_clone/common/widgets/loader.dart';
 import 'package:amazon_clone/features/favorites/services/favorites_sc_service.dart';
-import 'package:amazon_clone/features/product_details/screens/product_details_screen.dart';
-import 'package:amazon_clone/models/product.dart';
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 import '../../../constants/global_variables.dart';
 import '../../../models/Orders.dart';
-import '../../order_details/order_detail_screen/orderdetail_sc.dart';
+
 import '../../widgets/single_product.dart';
 
 class favorites_sc extends StatefulWidget {

@@ -1,13 +1,10 @@
 import 'package:amazon_clone/constants/global_variables.dart';
 import 'package:amazon_clone/features/favorites/screens/favorites_sc.dart';
-import 'package:amazon_clone/features/product_details/screens/product_details_screen.dart';
-import 'package:amazon_clone/features/product_details/services/product_details_services.dart';
+
 import 'package:amazon_clone/features/screens/account_screen.dart';
 import 'package:amazon_clone/features/screens/home/home_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:badges/badges.dart';
+
 import 'package:provider/provider.dart';
 
 import '../../provider/user_provider.dart';

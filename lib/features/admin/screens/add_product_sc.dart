@@ -5,10 +5,9 @@ import 'package:amazon_clone/common/widgets/custom_textfield.dart';
 import 'package:amazon_clone/constants/utils.dart';
 import 'package:amazon_clone/features/screens/services/admin_services.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
+
 import 'package:dotted_border/dotted_border.dart';
 
 import '../../../constants/global_variables.dart';

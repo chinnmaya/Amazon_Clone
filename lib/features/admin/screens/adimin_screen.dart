@@ -1,9 +1,7 @@
 import 'package:amazon_clone/features/admin/screens/order_screen.dart';
 import 'package:amazon_clone/features/admin/screens/post_screens.dart';
-import 'package:badges/badges.dart';
+
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 import '../../../constants/global_variables.dart';
 

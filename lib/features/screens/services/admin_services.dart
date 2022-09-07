@@ -6,13 +6,11 @@ import 'package:amazon_clone/constants/global_variables.dart';
 import 'package:amazon_clone/constants/utils.dart';
 import 'package:amazon_clone/models/product.dart';
 import 'package:amazon_clone/provider/user_provider.dart';
-import 'package:amazon_clone/provider/user_provider.dart';
+
 import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart ' as http;
 import 'package:cloudinary_public/cloudinary_public.dart';
 import 'package:provider/provider.dart';
-import 'package:amazon_clone/models/product.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../models/Orders.dart';
 import '../../../provider/user_provider.dart';

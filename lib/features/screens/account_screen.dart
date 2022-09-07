@@ -1,11 +1,10 @@
 import 'package:amazon_clone/constants/global_variables.dart';
-import 'package:amazon_clone/features/screens/account_sc_service.dart';
 
 import 'package:amazon_clone/features/widgets/below_appbar.dart';
 import 'package:amazon_clone/features/widgets/order.dart';
 
 import 'package:amazon_clone/features/widgets/top_button.dart';
-import 'package:amazon_clone/models/Orders.dart';
+
 import 'package:flutter/material.dart';
 
 class account_sc extends StatefulWidget {

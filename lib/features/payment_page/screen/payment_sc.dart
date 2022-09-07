@@ -1,8 +1,7 @@
 import 'package:amazon_clone/features/address/service/address_sc_service.dart';
-import 'package:amazon_clone/features/screens/home/home_screen.dart';
+
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
+
 import 'package:razorpay_flutter/razorpay_flutter.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
 

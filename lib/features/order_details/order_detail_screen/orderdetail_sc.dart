@@ -1,5 +1,5 @@
 import 'package:amazon_clone/common/widgets/custom_button.dart';
-import 'package:amazon_clone/features/admin/screens/adimin_screen.dart';
+
 import 'package:amazon_clone/features/screens/services/admin_services.dart';
 import 'package:amazon_clone/models/Orders.dart';
 import 'package:amazon_clone/provider/user_provider.dart';

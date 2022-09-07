@@ -5,13 +5,13 @@ import 'package:amazon_clone/models/product.dart';
 import 'package:amazon_clone/models/user.dart';
 import 'package:amazon_clone/provider/user_provider.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/rendering.dart';
+
 import 'package:provider/provider.dart';
 
 import '../../../constants/error_handling.dart';
 import '../../../constants/global_variables.dart';
 import '../../../provider/user_provider.dart';
-import '../../../provider/user_provider.dart';
+
 import 'package:http/http.dart ' as http;
 
 class productServices {

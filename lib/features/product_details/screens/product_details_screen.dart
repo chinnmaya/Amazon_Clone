@@ -6,8 +6,6 @@ import 'package:amazon_clone/features/product_details/services/product_details_s
 import 'package:amazon_clone/models/product.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 import '../../../constants/global_variables.dart';

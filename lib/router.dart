@@ -8,8 +8,7 @@ import 'package:amazon_clone/features/screens/home/category_deal.dart';
 import 'package:amazon_clone/features/screens/home/home_screen.dart';
 import 'package:amazon_clone/features/search/screens/search_sc.dart';
 import 'package:amazon_clone/models/product.dart';
-import 'package:amazon_clone/models/product.dart';
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 
 import 'models/product.dart';

@@ -3,11 +3,8 @@ import 'package:amazon_clone/features/screens/home/widegts_home/address_box.dart
 import 'package:amazon_clone/features/screens/home/widegts_home/carusoul_img.dart';
 import 'package:amazon_clone/features/screens/home/widegts_home/deal_of_day.dart';
 import 'package:amazon_clone/features/screens/home/widegts_home/top_categories.dart';
-import 'package:amazon_clone/models/user.dart';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 import '../../search/screens/search_sc.dart';
 

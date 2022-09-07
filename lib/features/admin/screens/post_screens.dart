@@ -4,8 +4,6 @@ import 'package:amazon_clone/features/screens/services/admin_services.dart';
 import 'package:amazon_clone/features/widgets/single_product.dart';
 import 'package:amazon_clone/models/product.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class post_screens extends StatefulWidget {
   const post_screens({Key? key}) : super(key: key);

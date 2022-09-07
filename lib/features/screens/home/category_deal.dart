@@ -2,10 +2,8 @@ import 'package:amazon_clone/common/widgets/loader.dart';
 import 'package:amazon_clone/features/product_details/screens/product_details_screen.dart';
 import 'package:amazon_clone/features/screens/services/home_services.dart';
 import 'package:amazon_clone/models/product.dart';
-import 'package:flutter/foundation.dart';
+
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 import '../../../constants/global_variables.dart';
 

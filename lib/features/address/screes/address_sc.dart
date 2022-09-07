@@ -4,9 +4,7 @@ import 'package:amazon_clone/features/payment_page/screen/payment_sc.dart';
 import 'package:amazon_clone/models/product.dart';
 import 'package:amazon_clone/provider/user_provider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:razorpay_flutter/razorpay_flutter.dart';
+
 import 'package:provider/provider.dart';
 
 import '../../../common/widgets/custom_button.dart';

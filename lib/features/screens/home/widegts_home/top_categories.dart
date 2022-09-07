@@ -1,8 +1,6 @@
 import 'package:amazon_clone/constants/global_variables.dart';
 import 'package:amazon_clone/features/screens/home/category_deal.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class top_categories extends StatelessWidget {
   const top_categories({Key? key}) : super(key: key);

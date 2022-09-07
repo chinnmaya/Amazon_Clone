@@ -1,6 +1,7 @@
 import 'package:amazon_clone/common/widgets/custom_button.dart';
 import 'package:amazon_clone/common/widgets/stars.dart';
 import 'package:amazon_clone/features/address/screes/address_sc.dart';
+import 'package:amazon_clone/features/favorites/services/favorites_sc_service.dart';
 import 'package:amazon_clone/features/product_details/services/product_details_services.dart';
 import 'package:amazon_clone/models/product.dart';
 import 'package:carousel_slider/carousel_slider.dart';
@@ -23,6 +24,7 @@ class productdetailsc extends StatefulWidget {
 
 class _productdetailscState extends State<productdetailsc> {
   final productServices productservice = productServices();
+  final FavoriteService favoriteService = FavoriteService();
   void navigatetosearch(String query) {
     Navigator.pushNamed(context, Search_screen.routeName, arguments: query);
   }
@@ -33,7 +35,12 @@ class _productdetailscState extends State<productdetailsc> {
   }
 
   void addtocart() {
-    productservice.addtocart(buildContext: context, products: widget.products);
+    favoriteService.placeorder(
+      context: context,
+      totalsum: widget.products.price,
+      productName: widget.products.name,
+      image: widget.products.images[0],
+    );
   }
 
   @override
@@ -183,7 +190,7 @@ class _productdetailscState extends State<productdetailsc> {
             Padding(
                 padding: const EdgeInsets.all(10),
                 child: CustomBtn(
-                  text: "Add to cart",
+                  text: "Add to Favorite",
                   onpressed: addtocart,
                   color: const Color.fromRGBO(254, 216, 19, 1),
                 )),

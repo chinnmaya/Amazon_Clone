@@ -1,7 +1,12 @@
+import 'package:amazon_clone/common/widgets/custom_button.dart';
+import 'package:amazon_clone/features/admin/screens/adimin_screen.dart';
+import 'package:amazon_clone/features/screens/services/admin_services.dart';
 import 'package:amazon_clone/models/Orders.dart';
+import 'package:amazon_clone/provider/user_provider.dart';
 import 'package:flutter/material.dart';
 
 import 'package:intl/intl.dart';
+import 'package:provider/provider.dart';
 
 import '../../../constants/global_variables.dart';
 import '../../search/screens/search_sc.dart';
@@ -15,6 +20,7 @@ class orderDetail_screen extends StatefulWidget {
 }
 
 class _orderDetail_screenState extends State<orderDetail_screen> {
+  final admin_service admin_ser = admin_service();
   int currentstep = 0;
   void navigatetosearch(String query) {
     Navigator.pushNamed(context, Search_screen.routeName, arguments: query);
@@ -27,8 +33,21 @@ class _orderDetail_screenState extends State<orderDetail_screen> {
     currentstep = widget.order.status;
   }
 
+  void changeorderstatus(int status) {
+    admin_ser.changeorderStatus(
+        context: context,
+        status: status + 1,
+        order: widget.order,
+        onSucess: () {
+          setState(() {
+            currentstep += 1;
+          });
+        });
+  }
+
   @override
   Widget build(BuildContext context) {
+    final user = Provider.of<UserProvider>(context).user;
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(50),
@@ -175,6 +194,12 @@ class _orderDetail_screenState extends State<orderDetail_screen> {
               child: Stepper(
                 currentStep: currentstep,
                 controlsBuilder: ((context, details) {
+                  if (user.type == 'admin') {
+                    return CustomBtn(
+                        text: 'Done',
+                        onpressed: () =>
+                            changeorderstatus(details.currentStep));
+                  }
                   return const SizedBox();
                 }),
                 steps: [

@@ -1,11 +1,19 @@
+import 'package:amazon_clone/features/screens/account_sc_service.dart';
+import 'package:amazon_clone/features/screens/account_screen.dart';
 import 'package:amazon_clone/features/widgets/account_btn.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
-class top_btn extends StatelessWidget {
+class top_btn extends StatefulWidget {
   const top_btn({Key? key}) : super(key: key);
 
+  @override
+  State<top_btn> createState() => _top_btnState();
+}
+
+class _top_btnState extends State<top_btn> {
+  final accountServices accounter = accountServices();
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -18,7 +26,7 @@ class top_btn extends StatelessWidget {
           height: 10,
         ),
         Row(children: [
-          acc_btn(text: "Log Out", ontab: () {}),
+          acc_btn(text: "Log Out", ontab: () => accounter.logout(context)),
           acc_btn(text: "Your Wishlist", ontab: () {}),
         ])
       ],

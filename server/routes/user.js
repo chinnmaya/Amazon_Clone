@@ -4,6 +4,7 @@ const auth = require("../middlewares/auth");
 const Order = require("../models/order");
 const { Product } = require("../models/product");
 const User = require("../models/user");
+const Favorites=require("../models/favorites");
 
 userRouter.post("/api/add-to-cart", async (req, res) => {
   try {
@@ -109,5 +110,44 @@ userRouter.get("/api/orders/me", auth, async (req, res) => {
     res.status(500).json({ error: e.message });
   }
 });
+
+//favorites products
+userRouter.post("/api/favorites",auth, async (req, res) => {
+  try {
+    const { image,name,totalPrice, address } = req.body;
+    //let user = await User.findById(req.user);
+   // user.cart = [];
+    //user = await user.save();
+   
+    
+
+    let favorites = new Favorites({
+      image,
+      name,
+      totalPrice,
+      
+      userId:req.user,
+      
+
+    });
+    
+    
+    favorites = await favorites.save();
+    res.json(favorites);
+  } catch (e) {
+    res.status(500).json({ error: e.message });
+  }
+});
+//your favorites products
+
+userRouter.get("/api/favorites/me", auth,async (req, res) => {
+  try {
+    const favorites = await Favorites.find({ userId:req.user });
+    res.json(favorites);
+  } catch (e) {
+    res.status(500).json({ error: e.message });
+  }
+});
+
 
 module.exports = userRouter;

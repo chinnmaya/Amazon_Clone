@@ -1,3 +1,4 @@
+import 'package:amazon_clone/features/admin/screens/order_screen.dart';
 import 'package:amazon_clone/features/admin/screens/post_screens.dart';
 import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +22,7 @@ class _admin_screenState extends State<admin_screen> {
     const post_screens(),
     //const HomeScreen(),
     //const account_sc(),
-    const Text("Cart"),
+    const OrdersScreen(),
   ];
   void updatepage(int pagee) {
     setState(() {

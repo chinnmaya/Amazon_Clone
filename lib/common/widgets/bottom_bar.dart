@@ -1,4 +1,5 @@
 import 'package:amazon_clone/constants/global_variables.dart';
+import 'package:amazon_clone/features/favorites/screens/favorites_sc.dart';
 import 'package:amazon_clone/features/product_details/screens/product_details_screen.dart';
 import 'package:amazon_clone/features/product_details/services/product_details_services.dart';
 import 'package:amazon_clone/features/screens/account_screen.dart';
@@ -26,7 +27,7 @@ class _Bottom_barState extends State<Bottom_bar> {
   List<Widget> pagess = [
     const HomeScreen(),
     const account_sc(),
-    const Text("Cart"),
+    const favorites_sc(),
   ];
   void updatepage(int pagee) {
     setState(() {
@@ -84,11 +85,7 @@ class _Bottom_barState extends State<Bottom_bar> {
                           : GlobalVariables.backgroundColor,
                       width: bottombarwidth,
                     ))),
-                    child: Badge(
-                        elevation: 0,
-                        badgeContent: Text(cartlength.toString()),
-                        badgeColor: Colors.white,
-                        child: const Icon(Icons.shopping_cart_outlined))),
+                    child: const Icon(Icons.favorite_outline_outlined)),
                 label: ""),
           ],
         ));

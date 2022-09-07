@@ -14,6 +14,7 @@ import 'package:provider/provider.dart';
 import 'package:amazon_clone/models/product.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../../../models/Orders.dart';
 import '../../../provider/user_provider.dart';
 
 class admin_service {
@@ -72,13 +73,14 @@ class admin_service {
   }
 
   Future<List<product>> fetchproducts(BuildContext context) async {
+    final userprovider = Provider.of<UserProvider>(context, listen: false);
     List<product> productlist = [];
     try {
       http.Response response = await http.get(
         Uri.parse('$uri/admin/get-products'),
         headers: {
           'Content-Type': 'application/json; charset=UTF-8',
-          //'x-auth-token': userprovider.user.token,
+          'x-auth-token': userprovider.user.token,
         },
       );
       errorhandlefun(
@@ -95,5 +97,63 @@ class admin_service {
       showSnackBar(context, e.toString());
     }
     return productlist;
+  }
+
+  Future<List<Order>> fetchOrders(BuildContext context) async {
+    final userprovider = Provider.of<UserProvider>(context, listen: false);
+    List<Order> orderList = [];
+    try {
+      http.Response response = await http.get(
+        Uri.parse('$uri/admin/get-orders'),
+        headers: {
+          'Content-Type': 'application/json; charset=UTF-8',
+          'x-auth-token': userprovider.user.token,
+        },
+      );
+      errorhandlefun(
+          response: response,
+          context: context,
+          onsucess: () {
+            for (int i = 0; i < jsonDecode(response.body).length; i++) {
+              orderList.add(Order.fromJson(jsonEncode(
+                jsonDecode(response.body)[i],
+              )));
+            }
+          });
+    } catch (e) {
+      showSnackBar(context, e.toString());
+    }
+    return orderList;
+  }
+
+  void changeorderStatus({
+    required BuildContext context,
+    required int status,
+    required Order order,
+    required VoidCallback onSucess,
+  }) async {
+    final userProvider = Provider.of<UserProvider>(context, listen: false);
+
+    try {
+      http.Response res = await http.post(
+        Uri.parse('$uri/admin/change-order-status'),
+        headers: {
+          'Content-Type': 'application/json; charset=UTF-8',
+          'x-auth-token': userProvider.user.token,
+        },
+        body: jsonEncode({
+          'id': order.id,
+          'status': status,
+        }),
+      );
+
+      errorhandlefun(
+        response: res,
+        context: context,
+        onsucess: onSucess,
+      );
+    } catch (e) {
+      showSnackBar(context, e.toString());
+    }
   }
 }

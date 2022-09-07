@@ -8,7 +8,7 @@ const productRouter = require("./routes/product");
 const userRouter = require("./routes/user");
 
 // INIT
-const PORT = 3000;
+const PORT = process.env.PORT|| 3000;
 const app = express();
 const DB='mongodb+srv://babun:babun12345@cluster0.y99ptqf.mongodb.net/?retryWrites=true&w=majority'
 // middleware

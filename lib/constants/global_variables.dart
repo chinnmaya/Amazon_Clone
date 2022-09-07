@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-String uri = 'http://192.168.210.174:3000';
+String uri = 'http://amazon-serverr.herokuapp.com';
 
 class GlobalVariables {
   // COLORS
